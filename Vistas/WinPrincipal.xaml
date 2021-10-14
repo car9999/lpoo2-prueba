@@ -1,0 +1,268 @@
+﻿<Window x:Class="Vistas.WinPrincipal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WinPrincipal" Height="700" Width="1271" WindowStartupLocation="CenterScreen" Icon="/Vistas;component/Images/back.png" Loaded="Window_Loaded" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}">
+
+
+    <Window.Resources>
+        <!--toggle button style template-->
+        <ImageBrush x:Key="tb_mouse_over" 
+                    ImageSource="/Vistas;component/Images/icons8_bulleted_list.ico"></ImageBrush>
+
+        <Style x:Key="tb_style" TargetType="{x:Type ToggleButton}">
+
+            <Setter Property="Template">
+
+                <Setter.Value>
+
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border x:Name="border"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}"
+                                SnapsToDevicePixels="True">
+
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"></Setter>
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"></Setter>
+                            </Trigger>
+
+                            <Trigger Property="IsChecked" Value="true">
+
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}">
+
+                                </Setter>
+
+                                <Setter Property="BorderBrush"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}">
+
+                                </Setter>
+
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Border >
+        <Border.Background>
+            <ImageBrush ImageSource="/Vistas;component/Images/back.png" />
+        </Border.Background>
+
+
+        <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="225" Name="pnlMenu" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Padding="5" CornerRadius="17" Width="1260" Grid.Column="0" Background="Transparent">
+            
+            <Grid Background="{x:Null}">
+                <!--Background="#FF353232"  gris oscuro -->
+                <!--Background="#FFDE5C28"  naranja-->
+                <Grid x:Name="nav_pnl"
+                  HorizontalAlignment="Left"
+                  Width="60" Background="{x:Null}">
+
+                    <ToggleButton x:Name="tg_btn" VerticalAlignment="Top"
+                                      HorizontalAlignment="Left"
+                                      Margin="4,6,0,0"
+                                      Height="50"
+                                      Width="50"
+                                      BorderThickness="0" BorderBrush="{x:Null}" Foreground="{x:Null}"
+                                      Style="{StaticResource tb_style}">
+                        <ToggleButton.Background>
+                            <ImageBrush ImageSource="/Vistas;component/Images/icons8_menu.ico" />
+                        </ToggleButton.Background>
+                        <ToggleButton.Triggers>
+
+                            <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+
+                                <BeginStoryboard>
+
+                                    <Storyboard x:Name="hideStackPanel">
+
+                                        <DoubleAnimation
+                                                
+                                                Storyboard.TargetName="nav_pnl"
+                                                Storyboard.TargetProperty="Width"
+                                                BeginTime="0:0:0"
+                                                From="200" To="60"
+                                                Duration="0:0:0:1">
+
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+
+                            <EventTrigger RoutedEvent="ToggleButton.Checked">
+
+                                <BeginStoryboard>
+
+                                    <Storyboard x:Name="ShowStackPanel">
+
+                                        <DoubleAnimation Storyboard.TargetName="nav_pnl"
+                                                             Storyboard.TargetProperty="Width"
+                                                             BeginTime="0:0:0"
+                                                             From="60" To="200"
+                                                             Duration="0:0:0:1">
+
+
+                                        </DoubleAnimation>
+
+                                    </Storyboard>
+
+                                </BeginStoryboard>
+
+                            </EventTrigger>
+
+                        </ToggleButton.Triggers>
+                    </ToggleButton>
+
+                    <!-- aqui va menus-->
+
+                    <Menu HorizontalAlignment="Left" Name="menu1" VerticalAlignment="Stretch" Width="161" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" FontSize="20" FontFamily="Segoe UI" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" Margin="0,92,0,0" FontWeight="Bold">
+                        <MenuItem Name="UsuariosMenuPrincipal" Height="40" Margin="0,0,0,0">
+                            <MenuItem.Header>
+                                <StackPanel Orientation="Horizontal" Margin="0,0,0,0">
+                                    <Image Margin="0,0,0,0" Width="50" Height="40" Source="/Vistas;component/Images/icons8_name_tag3.png" />
+
+                                    <Label Name="lblUsuario" Content="Usuario" BorderThickness="2,0" Padding="4,0" Foreground="White" Margin="0,10,0,0">
+                                    </Label>
+                                </StackPanel>
+                            </MenuItem.Header>
+                            <MenuItem Header="Historial Login" Background="Gray" Height="30">
+                                <MenuItem.Icon>
+                                    <Image Source="/Vistas;component/Images/icons8_purchase_order_2.ico" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                            <MenuItem Header="Gestion Usuarios" Background="Gray" Height="30">
+                                <MenuItem.Icon>
+                                    <Image Source="/Vistas;component/Images/icons8_registration_3.ico" />
+                                </MenuItem.Icon>
+                            </MenuItem>
+                        </MenuItem>
+
+                        <MenuItem   Height="40" Margin="0,5,0,0" Name="ArticulosMenuPrincipal"  Click="ArticulosMenuPrincipal_Click">
+                            <MenuItem.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="50" Height="40" Source="/Vistas;component/Images/icons8_grocery_shelf.ico" />
+
+                                    <Label Name="lblArticulo" Content="Articulo" BorderThickness="2,0" Padding="4,0" Foreground="White" Margin="0,10,0,0">
+                                    </Label>
+                                </StackPanel>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <MenuItem   Height="40" Margin="0,5,0,0" Name="FamiliaMenuPrincipal" Click="FamiliaMenuPrincipal_Click">
+                            <MenuItem.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="50" Height="40" Source="/Vistas;component/Images/icons8_brick.ico" />
+                                    <Label Name="lblFamilia" Content="Familia" BorderThickness="2,0" Padding="4,0" Foreground="White" Margin="0,10,0,0">
+                                    </Label>
+                                </StackPanel>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <MenuItem   Height="40" Margin="0,5,0,0" Name="CategoriasMenuPrincipal" Click="CategoriaMenuPrincipal_Click">
+                            <MenuItem.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="50" Height="40" Source="/Vistas;component/Images/icons8_categorize_1.ico" />
+                                    <Label Name="lblCategoria" Content="Categoria" BorderThickness="2,0" Padding="4,0" Foreground="White" Margin="0,10,0,0">
+                                    </Label>
+                                </StackPanel>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <MenuItem   Height="40" Margin="0,5,0,0" Name="UMMenuPrincipal" Click="UMMenuPrincipal_Click">
+                            <MenuItem.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="50" Height="40" Source="/Vistas;component/Images/icons8_bmi.ico" />
+                                    <Label Name="lblUM" Content="UM" BorderThickness="2,0" Padding="4,0" Foreground="White" Margin="0,10,0,0">
+                                    </Label>
+                                </StackPanel>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <MenuItem   Height="40" Margin="0,5,0,0" Name="VentasMenuPrincipal">
+                            <MenuItem.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="50" Height="40" Source="/Vistas;component/Images/icons8_get_cash_1.ico" />
+                                    <Label Name="lblVentas" Content="Ventas" BorderThickness="2,0" Padding="4,0" Foreground="White" Margin="0,10,0,0">
+                                    </Label>
+                                </StackPanel>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <MenuItem   Height="40" Margin="0,5,0,0" Name="MesasMenuPrincipal" Click="MenuItem_Click">
+                            <MenuItem.Header>
+                                <StackPanel Orientation="Horizontal">
+                                    <Image Width="50" Height="40" Source="/Vistas;component/Images/icons8_dining_room_2.ico" />
+                                    <Label Name="lblMesas" Content="Mesas" BorderThickness="2,0" Padding="4,0" Foreground="White" Margin="0,10,0,0">
+                                    </Label>
+                                </StackPanel>
+                            </MenuItem.Header>
+                        </MenuItem>
+                        <MenuItem   Height="40" Margin="0,5,0,0" Name="ClientesMenuPrincipal" Click="ClientesMenuPrincipal_Click">
+                            <MenuItem.Header>
+                                <StackPanel Orientation="Horizontal" >
+                                    <Image Width="50" Height="40" Source="/Vistas;component/Images/icons8_male_female_user_group_1.ico" />
+                                    <Label Name="lbClient" Content="Clientes" BorderThickness="2,0" Padding="4,0" Foreground="White" Margin="0,10,0,0">
+                                    </Label>
+                                </StackPanel>
+                            </MenuItem.Header>
+                        </MenuItem>
+                    </Menu>
+                </Grid>
+              
+            </Grid>
+        </Border>
+        <Border Grid.Column="1"  Padding="0" CornerRadius="17">
+                <Grid>
+                    <Grid.RowDefinitions>
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="*" />                     
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" Background="Transparent" >
+                    <Grid >
+                            <Label Foreground="#84BBAB" FontSize="25" FontWeight="UltraBold" >Sistema Restaurante</Label>
+
+                            <Button Height="40" Width="40" HorizontalAlignment="Right" Margin="0,5,60,0" Name="btnCerrarApp" Click="btnCerrarApp_Click" >
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Vistas;component/Images/icons8_shutdown.ico" />
+                                </Button.Background>
+                            </Button>
+
+                            <Button Height="40" Width="40" HorizontalAlignment="Right" Margin="0,5,120,0"  Name="btnLogout" Click="btnLogout_Click" >
+                                <Button.Background>
+                                    <ImageBrush ImageSource="/Vistas;component/Images/icons8_in_app_messaging.ico" />
+                                </Button.Background>
+                            </Button>
+                           
+                            <!--<TextBlock Height="Auto" HorizontalAlignment="Right" Margin="0,578,970,0" Name="txtMateria" Text="LPOO 2" VerticalAlignment="Top" FontFamily="Arial" FontSize="48" FontWeight="Normal" FontStyle="Italic" Foreground="White" />
+                        <TextBlock Height="38" HorizontalAlignment="Left" Margin="306,604,0,0" Name="txtNombreGrupo" Text="GRUPO 4" VerticalAlignment="Top" Foreground="White" FontSize="20" FontStyle="Italic" FontFamily="Arial" />
+                        <TextBlock Height="23" HorizontalAlignment="Left" Margin="983,31,0,0" Name="txtFecha" Text="TextBlock" VerticalAlignment="Top" Foreground="White" FontFamily="Arial" FontSize="16" />
+                        <Image Height="60" HorizontalAlignment="Left" Margin="27,573,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="60" Source="/Vistas;component/Images/icons8_pizza_1.ico" />-->
+                        </Grid>
+                </Border>
+                    
+                <Border Grid.Row="1" Background="Transparent">
+                       
+                        <DockPanel Name="pnlContenedor">
+                           
+                        </DockPanel>
+                    </Border>
+                </Grid>
+        </Border>
+    </Grid>
+    </Border>
+</Window>

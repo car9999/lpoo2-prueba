@@ -1,0 +1,54 @@
+﻿<UserControl x:Class="Vistas.user_control.categoria.UCcategoria"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="466" d:DesignWidth="430">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\..\hoja de Estilos\estilosGenerales.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+    <Border Padding="5" CornerRadius="17" Background="White" Height="466" Width="430">
+
+        <Grid Style="{StaticResource gridCustom}" VerticalAlignment="Stretch" Background="White">
+            <Button Margin="10,10,0,0" Name="btnVolverPrincipalCustom" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/Vistas;component/Images/icons8_previous.ico" />
+                </Button.Background>
+            </Button>
+
+            <Label Content="Gestion de Categoria" Height="45" HorizontalAlignment="Left" Margin="88,59,0,0" Name="lblTituloCategoria" VerticalAlignment="Top" Width="252" Foreground="Black" FontFamily="Segoe Print" FontSize="22" OpacityMask="#FFC9C9C9" />
+            <Label Style="{StaticResource lblParaInputs}" Content="Descripcion:" Margin="58,154,0,223" Name="lblDescripcionCategoria" Foreground="Black" />
+            <TextBox Style="{StaticResource TextBoxCustom}" Margin="175,164,0,228" Name="txtDescripcionCategoria" Width="189" />
+
+            <Button  HorizontalAlignment="Left" Margin="41,0,0,45" Name="btnAgregar" Style="{StaticResource ResourceKey=btn_plantilla_control_add}" VerticalAlignment="Bottom" Width="110">
+                <StackPanel Orientation="Horizontal" >
+                    <Image Source="/Vistas;component/Images/agregar.png" Width="20"/>
+                    <TextBlock Text="Agregar" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+            <Button  HorizontalAlignment="Left" Margin="160,0,0,45" Name="btnEditar"
+                    Style="{StaticResource ResourceKey=btn_plantilla_control_edit}" VerticalAlignment="Bottom">
+                <StackPanel Orientation="Horizontal" >
+                    <Image  Width="20" Source="/Vistas;component/Images/editar.png" />
+                    <TextBlock Text="Editar" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+
+            <Button  HorizontalAlignment="Left" Margin="264,0,0,44" Name="btnEliminar" Style="{StaticResource ResourceKey=btn_plantilla_control_delete}" VerticalAlignment="Bottom">
+
+                <StackPanel Orientation="Horizontal" >
+                    <Image  Width="20" Source="/Vistas;component/Images/eliminar.png" />
+                    <TextBlock Text="Eliminar" Margin="10,0,0,0" VerticalAlignment="Center"/>
+                </StackPanel>
+            </Button>
+
+        </Grid>
+    </Border>
+</UserControl>

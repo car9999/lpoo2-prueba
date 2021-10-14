@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<estado_mesa>
+  <estado name="Libre"></estado>
+  <estado name="Reservada"></estado>
+  <estado name="Ocupada"></estado>
+  <estado name="Pidiendo"></estado>
+  <estado name="En Espera"></estado>
+  <estado name="Servidos"></estado>
+  <estado name="Esperando Cuenta"></estado>
+  <estado name="Pagado"></estado>
+</estado_mesa>

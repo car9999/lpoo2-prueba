@@ -1,0 +1,20 @@
+﻿<Window x:Class="Vistas.WinWelcome"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WinWelcome" Height="326" Width="578" Background="#FF411212" WindowStartupLocation="CenterScreen" WindowState="Normal" WindowStyle="None" Loaded="Window_Loaded">
+    <Grid Name="grdWelcome" Width="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Button Content="Aceptar" Name="btn_aceptar" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"  Visibility="Visible" BorderThickness="1" TabIndex="3" Width="126" Height="36" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="338,239,0,0" Foreground="#FF7C7C7C" FontSize="20" FontFamily="Arial" FontStyle="Normal" Click="btn_aceptar_Click"></Button>
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="289,45,0,0" Name="textBlock1" Text="Usuario" VerticalAlignment="Top" Foreground="White" FontSize="20" />
+        <TextBlock Height="23" HorizontalAlignment="Left" Margin="288,134,0,0" Name="textBlock2" Text="Contraseña" VerticalAlignment="Top" Foreground="White" FontSize="20" />
+        <TextBlock Height="Auto" HorizontalAlignment="Left" Margin="67,49,0,0" Name="textBlock3" Text="Bienvenido" VerticalAlignment="Top" Foreground="White" FontSize="32" FontFamily="Arial" FontStyle="Italic" />
+        <TextBox Height="35" BorderThickness="2" Name="txtUsuario" Width="230" FontSize="20" Visibility="Visible" DataContext="{Binding}" Padding="0" Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Text="" AcceptsReturn="True" FontFamily="Arial" OpacityMask="Black" Margin="288,74,0,0" Foreground="White" BorderBrush="White" />
+        <PasswordBox Height="36" Name="txtContraseña" Width="230" BorderThickness="2" FontSize="20" FontFamily="Arial" OpacityMask="Black" Margin="288,163,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" BorderBrush="White" Background="Transparent" Foreground="White" />
+        <Image Height="138" HorizontalAlignment="Left" Margin="67,92,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="144" Source="/Vistas;component/Images/icons8_name_2.ico" />
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                <GradientStop Color="#FF7C4931" Offset="0" />
+                <GradientStop Color="#FF413B3A" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+    </Grid>
+</Window>

@@ -1,0 +1,119 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    
+    <Style x:Key="TextBoxCustom" TargetType="TextBox">
+        <Setter Property="Height" Value="23"></Setter>
+        <Setter Property="HorizontalAlignment" Value="left"></Setter>
+        <Setter Property="Width" Value="160"></Setter>
+    </Style>
+
+    <Style x:Key="gridCustom" TargetType="Grid">
+        <Setter Property="Background" Value="#FFDE5C28"></Setter>
+    </Style>
+
+    <Style x:Name="lblTituloCustom" TargetType="Label">
+        <Setter Property="Height" Value="45"></Setter>
+
+        <Setter Property="HorizontalAlignment" Value="Left" ></Setter>
+        <Setter Property="VerticalAlignment" Value="tOP"></Setter>
+        <Setter Property="Width" Value="240"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="FontFamily" Value="Segoe Print"></Setter>
+        <Setter Property="FontSize" Value="22"></Setter>
+    </Style>
+
+
+    <Style x:Key="lblParaInputs" TargetType="Label">
+        <Setter Property="Height" Value="38"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="FontSize" Value="15"></Setter>
+        <Setter Property="FontFamily" Value="Segoe Print"></Setter>
+    </Style>
+
+
+    <Style x:Name="btnVolverPrincipalCustom" TargetType="Button">
+        <!--   <Setter Property="FontSize" Value="15"></Setter>
+            <Setter Property="Height" Value="30"></Setter>
+            <Setter Property="Foreground" Value="Blue"></Setter>
+            <Setter Property="Background" Value="LightGreen"></Setter>
+            <Setter Property="FontWeight" Value="Bold"></Setter>-->
+        <Setter Property="Height" Value="40"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="VerticalAlignment" Value="Top"></Setter>
+        <Setter Property="Width" Value="40"></Setter>
+    </Style>
+
+    <Style x:Key="btnEliminarCustom" TargetType="Button">
+        <Setter Property="VerticalAlignment" Value="Top"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Width" Value="75"></Setter>
+        <Setter Property="Height" Value="29"></Setter>
+        <Setter Property="FontFamily" Value="Arial"></Setter>
+        <Setter Property="FontSize" Value="15"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="Background" Value="RED"></Setter>
+        <Setter Property="BorderBrush" Value="GRAY"></Setter>
+        <Setter Property="BorderThickness" Value="3"></Setter>
+    </Style>
+    
+    <Style x:Key="btnEditarCustom" TargetType="Button">
+        <Setter Property="VerticalAlignment" Value="Top"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Width" Value="75"></Setter>
+        <Setter Property="Height" Value="29"></Setter>
+        <Setter Property="FontFamily" Value="Arial"></Setter>
+        <Setter Property="FontSize" Value="15"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="Background" Value="Cyan"></Setter>
+        <Setter Property="BorderBrush" Value="GRAY"></Setter>
+        <Setter Property="BorderThickness" Value="3"></Setter>
+    </Style>
+
+    
+    <Style x:Key="btnAddCustom" TargetType="Button">
+        <Setter Property="VerticalAlignment" Value="Top"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Width" Value="75"></Setter>
+        <Setter Property="Height" Value="29"></Setter>
+        <Setter Property="FontFamily" Value="Arial"></Setter>
+        <Setter Property="FontSize" Value="15"></Setter>
+        <Setter Property="Foreground" Value="Black"></Setter>
+        <Setter Property="Background" Value="GreenYellow"></Setter>
+        <Setter Property="BorderBrush" Value="GRAY"></Setter>
+        <Setter Property="BorderThickness" Value="3"></Setter>
+    </Style>
+    
+
+    <Style TargetType="RadioButton">
+        <Setter Property="Height" Value="16"></Setter>
+        <Setter Property="VerticalAlignment" Value="Top"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+        <Setter Property="Foreground" Value="White"></Setter>
+        <Setter Property="FontFamily" Value="Segoe Print"></Setter>
+        <Setter Property="FontSize" Value="13"></Setter>
+    </Style>
+
+    <Style TargetType="ComboBox">
+        <Setter Property="Height" Value="28"></Setter>
+        <Setter Property="VerticalAlignment" Value="Top"></Setter>
+        <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+
+    </Style>
+
+
+    <ControlTemplate x:Key="TextBoxErrorTemplate">
+        <DockPanel>
+            <Ellipse DockPanel.Dock="Right" Margin="2,0" Width="10" Height="10">
+                <Ellipse.Fill>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#11FF1111" Offset="0" />
+                        <GradientStop Color="#FFFF0000" Offset="1" />
+                    </LinearGradientBrush>
+                </Ellipse.Fill>
+            </Ellipse>
+            <AdornedElementPlaceholder />
+        </DockPanel>
+    </ControlTemplate>
+</ResourceDictionary>

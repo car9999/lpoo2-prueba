@@ -1,0 +1,38 @@
+﻿<Window x:Class="Vistas.WinFamilias"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="WinFamilias" Height="488" Width="416" FontSize="15" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded">
+    
+    <Window.Resources>
+        <!--ESTILOS   -->
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source=".\hoja de Estilos\estilosGenerales.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+
+    <Grid Style="{StaticResource gridCustom}" Width="388" Height="450">
+        <Label Style="{StaticResource lblParaInputs}" Content="Descripcion" Margin="37,99,0,313" Name="lblDescripcion"/>
+        <!-- TITULO -->
+        <Label Content="Gestion de Familias" Margin="89,30,0,0" Name="lblTituloCustom"/>
+
+
+        <!-- BOTONES ABM -->
+        <Button Style="{StaticResource btnAddCustom}" Content="Agregar" Margin="71,398,0,0" Name="btnAgregar" DataContext="{Binding}" Click="btnAgregar_Click"/>
+
+        <Button Style="{StaticResource btnEditarCustom}" Content="Modificar" Margin="169,398,0,0" Name="btnModificar"/>
+
+        <Button Style="{StaticResource btnEliminarCustom}" Content="Eliminar" Margin="259,398,0,0" Name="btnEliminar"/>
+
+
+        <!-- BOTON BACK -->
+        <Button Margin="10,10,0,0" Name="btnVolverPrincipalCustom" Click="btnVolverPrincipal_Click">
+            <Button.Background>
+                <ImageBrush ImageSource="/Vistas;component/Images/icons8_previous.ico" />
+            </Button.Background>
+        </Button>
+        <TextBox Height="193" HorizontalAlignment="Left" Margin="37,143,0,0" Name="txtDescripcion" VerticalAlignment="Top" Width="314" AcceptsTab="True" AcceptsReturn="True" TextWrapping="Wrap" />
+    </Grid>
+</Window>
