@@ -9,7 +9,7 @@
                 <XmlDataProvider x:Key="Estado_Mesa" Source="/XML/EstadosMesa.xml" XPath="/estado_mesa"></XmlDataProvider>
                 <svc:ConversorDeEstados x:Key="asignar_color"></svc:ConversorDeEstados>
             </Grid.Resources>
-            <Button Height="40" HorizontalAlignment="Left" Margin="26,12,0,0" Name="btnVolverPrincipal" VerticalAlignment="Top" Width="40" Click="btnVolverPrincipal_Click">
+            <Button Height="40" HorizontalAlignment="Left" Margin="6,12,0,0" Name="btnVolverPrincipal" VerticalAlignment="Top" Width="40" Click="btnVolverPrincipal_Click">
                 <Button.Background>
                     <ImageBrush ImageSource="/Vistas;component/Images/icons8_previous.ico" />
                 </Button.Background>
@@ -25,10 +25,10 @@
             <TextBlock Height="23" HorizontalAlignment="Left" Margin="99,402,0,0" Name="txtOcupada" Text="OCUPADA" VerticalAlignment="Top" />
             <Border BorderBrush="Silver" BorderThickness="1" Height="40" HorizontalAlignment="Left" Margin="53,331,0,0" Name="brdColorLibre" VerticalAlignment="Top" Width="40" Background="Green" />
             <Border BorderBrush="Silver" BorderThickness="1" Height="40" HorizontalAlignment="Left" Margin="53,385,0,0" VerticalAlignment="Top" Width="40" Name="brdColorOcupada" Background="Red" />
-            <TextBlock Height="23" HorizontalAlignment="Left" Margin="58,91,0,0" Name="txbEstadoMesa" Text="Estado Mesa:" VerticalAlignment="Top" />
+            <TextBlock Height="23" HorizontalAlignment="Left" Margin="58,102,0,0" Name="txbEstadoMesa" Text="Estado Mesa:" VerticalAlignment="Top" />
             <ListBox 
                 ItemsSource="{Binding Source={StaticResource Estado_Mesa}, XPath=estado/@name}"
-                Height="169" HorizontalAlignment="Left" Margin="58,120,0,0" VerticalAlignment="Top" Width="128" Name="lstEstadosMesa" />
+                Height="169" HorizontalAlignment="Left" Margin="58,131,0,0" VerticalAlignment="Top" Width="128" Name="lstEstadosMesa" />
         </Grid>
     </Border>
 </Window>
